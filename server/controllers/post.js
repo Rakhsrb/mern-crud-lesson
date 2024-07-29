@@ -26,10 +26,10 @@ const GetAllPosts = async (_, res) => {
 };
 
 const CreateNewPost = async (req, res) => {
-  const { title, decription } = req.body;
+  const { title, description } = req.body;
   try {
     if (req.body) {
-      if (title && decription) {
+      if (title && description) {
         const newPost = new PostSchema(req.body);
         newPost.save();
         return res.json({ message: "Yangi post yaratildi!" });

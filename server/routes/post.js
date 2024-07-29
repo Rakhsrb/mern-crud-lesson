@@ -1,4 +1,4 @@
-const exress = require("express");
+const express = require("express");
 const {
   GetAllPosts,
   GetOnePost,
@@ -7,7 +7,7 @@ const {
   DeletePost,
 } = require("../controllers/post");
 
-const router = exress.Router();
+const router = express.Router();
 
 router.get("/", GetAllPosts);
 router.get("/:id", GetOnePost);

@@ -8,6 +8,7 @@ const PostSlicer = createSlice({
       isError: "",
       data: [],
     },
+    baseUrl: "http://localhost:4000/posts",
   },
   reducers: {
     getPostsPending(state, _) {
