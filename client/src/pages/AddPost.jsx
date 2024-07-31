@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const AddPost = () => {
   const { baseUrl } = useSelector((state) => state.posts);
+  const navigate = useNavigate();
 
   const [postData, setPostData] = useState({
     title: "",
@@ -19,7 +21,7 @@ export const AddPost = () => {
     e.preventDefault();
     try {
       const response = await axios.post(baseUrl, postData);
-      console.log(response);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
